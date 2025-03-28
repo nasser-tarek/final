@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد سعيد</title>
+    <style>
+        body {
+            background-color: rgb(42, 43, 60);
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            direction: rtl;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            font-size: 20px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        img {
+            margin-top: 20px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>أدخل اسمك</h1>
+    <form method="POST">
+        <input type="text" name="name" required>
+        <button type="submit">أدخل </button>
+    </form>
+
+    {% if name %}
+        <img src="{{ url_for('static', filename='eid_mubarak.jpg') }}" alt="عيد سعيد">
+        <h2>عيد سعيد يا {{ name }}</h2>
+    {% endif %}
+</body>
+</html>
